@@ -23,7 +23,7 @@ function ping(url: string, port?: number) {
     const start = Date.now()
 
     const pingRequest = mod(options, () => {
-      resolve(Date.now() - start)
+      resolve({ time: Date.now() - start, url: url})
       pingRequest.abort()
     })
 
